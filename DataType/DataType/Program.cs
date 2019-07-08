@@ -130,6 +130,40 @@ namespace DataType
             string i_g = "1.23456";
             float i_h = float.Parse(i_g);
             WriteLine($"i_g = {i_g}, {i_g.GetType()} , i_h = {i_h}, {i_h.GetType()}");
+
+            WriteLine();
+            WriteLine();
+            //널 조건부 연산자
+            System.Collections.ArrayList check =null;
+            check?.Add("야구");
+            check?.Add("축구");
+            WriteLine($"count : {check?.Count}");
+            WriteLine($"{check?[0]}");
+            WriteLine($"{check?[1]}");
+
+            check = new System.Collections.ArrayList();
+            check?.Add("야구");
+            check?.Add("축구");
+            WriteLine($"count : {check?.Count}");
+            WriteLine($"{check?[0]}");
+            WriteLine($"{check?[1]}");
+
+
+            WriteLine();
+            WriteLine();
+            //널 병합 연산자
+            int? num = null;
+            WriteLine($"{num ?? -1}");
+
+            num = 50;
+            WriteLine($"{num ?? -1}");
+
+            string tmp = null;
+            WriteLine($"{tmp ?? "def"}");
+
+            tmp = "a";
+            WriteLine($"{tmp ?? "def"}");
+
         }
     }
 }
