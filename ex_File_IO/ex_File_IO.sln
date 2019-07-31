@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dir", "dir\dir.csproj", "{4693B1EC-33C1-45B8-AD3E-898B4EB012D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dir", "dir\dir.csproj", "{4693B1EC-33C1-45B8-AD3E-898B4EB012D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Touch", "Touch\Touch.csproj", "{4E0B520C-9B2E-437E-B27A-EDDCF6A7597E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Touch", "Touch\Touch.csproj", "{4E0B520C-9B2E-437E-B27A-EDDCF6A7597E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{5862B7A8-5084-43AD-9584-96941A44E630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicIO", "BasicIO\BasicIO.csproj", "{E8222560-DB43-4894-BC89-9CDE38F9594E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seqnrand", "Seqnrand\Seqnrand.csproj", "{71E9FD7A-D36D-491D-B542-A4613EEB9774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryFile", "BinaryFile\BinaryFile.csproj", "{3345CB45-BED7-4CD1-8420-C20D903CCA43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFile", "TextFile\TextFile.csproj", "{4AD93A20-7DE1-4FF6-ABA0-EE9F9C9B018C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{5862B7A8-5084-43AD-9584-96941A44E630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5862B7A8-5084-43AD-9584-96941A44E630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5862B7A8-5084-43AD-9584-96941A44E630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8222560-DB43-4894-BC89-9CDE38F9594E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8222560-DB43-4894-BC89-9CDE38F9594E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8222560-DB43-4894-BC89-9CDE38F9594E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8222560-DB43-4894-BC89-9CDE38F9594E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E9FD7A-D36D-491D-B542-A4613EEB9774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E9FD7A-D36D-491D-B542-A4613EEB9774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E9FD7A-D36D-491D-B542-A4613EEB9774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E9FD7A-D36D-491D-B542-A4613EEB9774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3345CB45-BED7-4CD1-8420-C20D903CCA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3345CB45-BED7-4CD1-8420-C20D903CCA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3345CB45-BED7-4CD1-8420-C20D903CCA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3345CB45-BED7-4CD1-8420-C20D903CCA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD93A20-7DE1-4FF6-ABA0-EE9F9C9B018C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD93A20-7DE1-4FF6-ABA0-EE9F9C9B018C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD93A20-7DE1-4FF6-ABA0-EE9F9C9B018C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD93A20-7DE1-4FF6-ABA0-EE9F9C9B018C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
