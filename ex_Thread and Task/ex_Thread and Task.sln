@@ -5,15 +5,25 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "basicthread", "basicthread\basicthread.csproj", "{F5015D95-B816-439E-BD2A-31EA97376BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbortingThread", "AbortingThread\AbortingThread.csproj", "{BC854AFA-C86E-48D5-83CD-E4F1BAF06449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbortingThread", "AbortingThread\AbortingThread.csproj", "{BC854AFA-C86E-48D5-83CD-E4F1BAF06449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingThreadState", "UsingThreadState\UsingThreadState.csproj", "{9A6E8C70-ADD7-4C91-8F84-6DE96CD866D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingThreadState", "UsingThreadState\UsingThreadState.csproj", "{9A6E8C70-ADD7-4C91-8F84-6DE96CD866D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterruptingThread", "InterruptingThread\InterruptingThread.csproj", "{69833CE7-05BD-44BA-AC81-5EAD82CFAAAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterruptingThread", "InterruptingThread\InterruptingThread.csproj", "{69833CE7-05BD-44BA-AC81-5EAD82CFAAAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronize", "Synchronize\Synchronize.csproj", "{68D0C15E-4E3F-4E80-A58B-D6D5F357505F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Synchronize", "Synchronize\Synchronize.csproj", "{68D0C15E-4E3F-4E80-A58B-D6D5F357505F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingMonitor", "UsingMonitor\UsingMonitor.csproj", "{295E079D-ED61-46CB-B709-F1A213FC3914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingMonitor", "UsingMonitor\UsingMonitor.csproj", "{295E079D-ED61-46CB-B709-F1A213FC3914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingTask", "UsingTask\UsingTask.csproj", "{92472A07-D559-4C7A-B361-EFAA582F6A95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskResult", "TaskResult\TaskResult.csproj", "{0C3CAFB7-8E39-4469-A9BD-BE4D46F1F6C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelLoop", "ParallelLoop\ParallelLoop.csproj", "{68E6A42E-9EDA-4432-90EB-D0D3BEFCB90A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{E00BFC54-5A82-402E-8D69-46534F006F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncFileIO", "AsyncFileIO\AsyncFileIO.csproj", "{294D4D80-47F0-42A7-88E7-B4676330285E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,26 @@ Global
 		{295E079D-ED61-46CB-B709-F1A213FC3914}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{295E079D-ED61-46CB-B709-F1A213FC3914}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{295E079D-ED61-46CB-B709-F1A213FC3914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92472A07-D559-4C7A-B361-EFAA582F6A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92472A07-D559-4C7A-B361-EFAA582F6A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92472A07-D559-4C7A-B361-EFAA582F6A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92472A07-D559-4C7A-B361-EFAA582F6A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C3CAFB7-8E39-4469-A9BD-BE4D46F1F6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3CAFB7-8E39-4469-A9BD-BE4D46F1F6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3CAFB7-8E39-4469-A9BD-BE4D46F1F6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3CAFB7-8E39-4469-A9BD-BE4D46F1F6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E6A42E-9EDA-4432-90EB-D0D3BEFCB90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E6A42E-9EDA-4432-90EB-D0D3BEFCB90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E6A42E-9EDA-4432-90EB-D0D3BEFCB90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E6A42E-9EDA-4432-90EB-D0D3BEFCB90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E00BFC54-5A82-402E-8D69-46534F006F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00BFC54-5A82-402E-8D69-46534F006F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00BFC54-5A82-402E-8D69-46534F006F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E00BFC54-5A82-402E-8D69-46534F006F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{294D4D80-47F0-42A7-88E7-B4676330285E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{294D4D80-47F0-42A7-88E7-B4676330285E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{294D4D80-47F0-42A7-88E7-B4676330285E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{294D4D80-47F0-42A7-88E7-B4676330285E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
