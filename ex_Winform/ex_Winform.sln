@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormAndControl", "FormAndCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingControl", "UsingControl\UsingControl.csproj", "{111AD747-DD22-4FF3-B372-458299006D8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncFileIOWinForm", "AsyncFileIOWinForm\AsyncFileIOWinForm.csproj", "{203AAD7F-20BE-4219-9A52-4653DD12DA5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{111AD747-DD22-4FF3-B372-458299006D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{111AD747-DD22-4FF3-B372-458299006D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{111AD747-DD22-4FF3-B372-458299006D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203AAD7F-20BE-4219-9A52-4653DD12DA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203AAD7F-20BE-4219-9A52-4653DD12DA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203AAD7F-20BE-4219-9A52-4653DD12DA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203AAD7F-20BE-4219-9A52-4653DD12DA5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
