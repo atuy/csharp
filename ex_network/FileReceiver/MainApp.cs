@@ -96,7 +96,7 @@ namespace FileReceiver
                     long fileSize = reqBody.FILESIZE;
                     string fileName = Encoding.Default.GetString(reqBody.FILENAME);
                     FileStream file =
-                       new FileStream(dir + "\\" + fileName, FileMode.Create);
+                       new FileStream();
 
                     uint? dataMsgId = null;
                     ushort prevSeq = 0;
