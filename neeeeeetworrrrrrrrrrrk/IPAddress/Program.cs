@@ -22,6 +22,7 @@ namespace IPAddress01
             WriteLine();
             WriteLine();
             WriteLine();
+
             IPAddress[] IP_1 = Dns.GetHostAddresses("www.naver.com");
             foreach (IPAddress host in IP_1)
             {
@@ -31,6 +32,28 @@ namespace IPAddress01
             /*
              * DNS의 주소를 받아오는 코드
              */
+            WriteLine();
+            WriteLine();
+            WriteLine();
+
+
+            IPHostEntry iPHost = Dns.GetHostEntry("www.naver.com");
+            foreach (IPAddress ip in iPHost.AddressList)
+                WriteLine($"{ip}");
+
+            WriteLine($"{iPHost.HostName}");
+
+
+            WriteLine();
+            WriteLine();
+            WriteLine();
+
+            IPAddress iPAddress = IPAddress.Parse("127.0.0.1");
+            int port = 5454;
+            IPEndPoint iPEnd = new IPEndPoint(iPAddress, port);
+            WriteLine($"IP : {iPEnd.Address}, Port : {iPEnd.Port}");
+            WriteLine(iPEnd.ToString());
+            ReadKey();
         }
     }
 }
