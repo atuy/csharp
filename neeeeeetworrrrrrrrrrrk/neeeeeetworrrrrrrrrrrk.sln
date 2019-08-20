@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "binwr01", "binwr01\binwr01.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "binrd01", "binrd01\binrd01.csproj", "{FFFB7A8B-DCF4-4400-9C5B-D7D89F7F982C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{9C9E6560-1D1D-4EAE-82CD-BA4288BEB0B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "WindowsFormsApp2\WindowsFormsApp2.csproj", "{2BA27B40-883D-4F17-886F-77A82FE6E4F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{FFFB7A8B-DCF4-4400-9C5B-D7D89F7F982C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFFB7A8B-DCF4-4400-9C5B-D7D89F7F982C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFFB7A8B-DCF4-4400-9C5B-D7D89F7F982C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9E6560-1D1D-4EAE-82CD-BA4288BEB0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9E6560-1D1D-4EAE-82CD-BA4288BEB0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9E6560-1D1D-4EAE-82CD-BA4288BEB0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9E6560-1D1D-4EAE-82CD-BA4288BEB0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA27B40-883D-4F17-886F-77A82FE6E4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA27B40-883D-4F17-886F-77A82FE6E4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA27B40-883D-4F17-886F-77A82FE6E4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA27B40-883D-4F17-886F-77A82FE6E4F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
