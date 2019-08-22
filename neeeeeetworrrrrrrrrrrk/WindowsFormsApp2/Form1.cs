@@ -61,11 +61,14 @@ namespace WindowsFormsApp2
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bw.Write(-1);
-            bw.Close();
-            br.Close();
-            ns.Close();
-            tcpClient.Close();
+            if(tcpClient != null)
+            {
+                bw.Close();
+                br.Close();
+                ns.Close();
+                tcpClient.Close();
+            }
+            
         }
     }
 }
