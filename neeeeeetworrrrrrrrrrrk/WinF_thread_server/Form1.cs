@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Net.Sockets;
@@ -16,25 +10,8 @@ namespace WinF_thread_server
     public partial class Form1 : Form
     {
         private TcpListener tcpListener = null;
-
-        private void AcceptClient()
-        {
-            while(true)
-            {
-                TcpClient tcpClient = tcpListener.AcceptTcpClient();
-
-                if(tcpClient.Connected)
-                {
-                    string str = ((IPEndPoint)tcpClient.Client.RemoteEndPoint).Address.ToString();
-                    listBox1.Items.Add(str);
-                }
-
-                EchoServer echoserver = new EchoServer(tcpClient);
-                Thread th = new Thread(new ThreadStart(echoserver.Process));
-                th.IsBackground = true;
-                th.Start();
-            }
-        }
+        string clientIP;
+        
         public Form1()
         {
             InitializeComponent();
@@ -60,32 +37,74 @@ namespace WinF_thread_server
             Thread th = new Thread(new ThreadStart(AcceptClient));
             th.IsBackground = true;
             th.Start();
+            MessageBox.Show("서버 시작");
         }
-
+        private void TextBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Button1_Click(sender, e);
+            }
+        }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(tcpListener != null)
+            if (tcpListener != null)
             {
                 tcpListener.Stop();
                 tcpListener = null;
             }
         }
+        private void AcceptClient()
+        {
+            while (true)
+            {
+                TcpClient tcpClient = tcpListener.AcceptTcpClient();
+
+                if (tcpClient.Connected)
+                {
+                    clientIP = ((IPEndPoint)tcpClient.Client.RemoteEndPoint).Address.ToString();
+                    listBox1.Items.Add(clientIP);
+                }
+
+                EchoServer echoserver = new EchoServer(tcpClient);
+                Thread th = new Thread(new ThreadStart(echoserver.Process));
+                th.IsBackground = true;
+                th.Start();
+                MessageBox.Show("클라이언트 접속");
+                if(echoserver.Getcheck == true)
+                {
+                    listBox1.Items.Remove(clientIP);
+                }
+            }
+        }
+
+        
     }
-    class EchoServer
+
+    public class EchoServer
     {
         TcpClient refClient;
         private BinaryReader br = null;
         private BinaryWriter bw = null;
-
-        int intvalue;
-        float floatvalue;
-        string strvalue;
-
+        string Ipaddress;
+        string str;
+        private bool check = false;
         public EchoServer(TcpClient client)
         {
             refClient = client;
+            Ipaddress = ((IPEndPoint)refClient.Client.RemoteEndPoint).Address.ToString();
         }
-
+        private void fin()
+        {
+            check = true;            
+        }
+        public bool Getcheck
+        {
+            get
+            {
+                return check;
+            }
+        }
         public void Process()
         {
             NetworkStream ns = refClient.GetStream();
@@ -94,16 +113,10 @@ namespace WinF_thread_server
             {
                 br = new BinaryReader(ns);
                 bw = new BinaryWriter(ns);
-
-                while(true)
+                while (true)
                 {
-                    intvalue = br.ReadInt32();                    
-                    floatvalue = br.ReadSingle();
-                    strvalue = br.ReadString();
-
-                    bw.Write(intvalue);
-                    bw.Write(floatvalue);
-                    bw.Write(strvalue);
+                    str = br.ReadString();
+                    bw.Write(str);
                 }
             }
             catch (SocketException se)
@@ -112,8 +125,9 @@ namespace WinF_thread_server
                 bw.Close();
                 ns.Close();
                 ns = null;
-                refClient.Close();
+                refClient.Close();                
                 MessageBox.Show(se.Message);
+                fin();
                 Thread.CurrentThread.Abort();
             }
             catch (IOException ex)
@@ -123,7 +137,8 @@ namespace WinF_thread_server
                 bw.Close();
                 ns.Close();
                 ns = null;
-                refClient.Close();              
+                refClient.Close();
+                fin();
                 Thread.CurrentThread.Abort();
             }
         }
