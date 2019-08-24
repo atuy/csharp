@@ -11,12 +11,11 @@ namespace WinF_thread_server
     {
         private TcpListener tcpListener = null;
         string clientIP;
-        
+        string str;
         public Form1()
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             tcpListener = new TcpListener(3000);
@@ -31,7 +30,6 @@ namespace WinF_thread_server
                 }
             }
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             Thread th = new Thread(new ThreadStart(AcceptClient));
@@ -66,49 +64,24 @@ namespace WinF_thread_server
                     listBox1.Items.Add(clientIP);
                 }
 
-                EchoServer echoserver = new EchoServer(tcpClient);
-                Thread th = new Thread(new ThreadStart(echoserver.Process));
+                //EchoServer echoserver = new EchoServer(tcpClient);
+                Thread th = new Thread(() => Proc(tcpClient));
                 th.IsBackground = true;
                 th.Start();
                 MessageBox.Show("클라이언트 접속");
-                if(echoserver.Getcheck == true)
-                {
-                    listBox1.Items.Remove(clientIP);
-                }
+                
             }
-        }
-
+        }   
         
-    }
-
-    public class EchoServer
-    {
-        TcpClient refClient;
-        private BinaryReader br = null;
-        private BinaryWriter bw = null;
-        string Ipaddress;
-        string str;
-        private bool check = false;
-        public EchoServer(TcpClient client)
+        
+        void Proc(TcpClient client)
         {
+            TcpClient refClient;
+            BinaryReader br = null;
+            BinaryWriter bw = null;
             refClient = client;
-            Ipaddress = ((IPEndPoint)refClient.Client.RemoteEndPoint).Address.ToString();
-        }
-        private void fin()
-        {
-            check = true;            
-        }
-        public bool Getcheck
-        {
-            get
-            {
-                return check;
-            }
-        }
-        public void Process()
-        {
             NetworkStream ns = refClient.GetStream();
-
+            
             try
             {
                 br = new BinaryReader(ns);
@@ -125,9 +98,9 @@ namespace WinF_thread_server
                 bw.Close();
                 ns.Close();
                 ns = null;
-                refClient.Close();                
+                refClient.Close();
                 MessageBox.Show(se.Message);
-                fin();
+                listBox1.Items.Remove(clientIP);
                 Thread.CurrentThread.Abort();
             }
             catch (IOException ex)
@@ -138,9 +111,61 @@ namespace WinF_thread_server
                 ns.Close();
                 ns = null;
                 refClient.Close();
-                fin();
+                listBox1.Items.Remove(clientIP);
                 Thread.CurrentThread.Abort();
             }
         }
     }
+    //public class EchoServer
+    //{
+    //    TcpClient refClient;
+    //    private BinaryReader br = null;
+    //    private BinaryWriter bw = null;
+    //    string Ipaddress;
+    //    string str;
+    //    private bool check = false;
+    //    public EchoServer(TcpClient client)
+    //    {
+    //        refClient = client;
+    //        Ipaddress = ((IPEndPoint)refClient.Client.RemoteEndPoint).Address.ToString();
+    //    }
+        
+    //    public void Process()
+    //    {
+    //        NetworkStream ns = refClient.GetStream();
+
+    //        try
+    //        {
+    //            br = new BinaryReader(ns);
+    //            bw = new BinaryWriter(ns);
+    //            while (true)
+    //            {
+    //                str = br.ReadString();
+    //                bw.Write(str);
+    //            }
+    //        }
+    //        catch (SocketException se)
+    //        {
+    //            br.Close();
+    //            bw.Close();
+    //            ns.Close();
+    //            ns = null;
+    //            refClient.Close();                
+    //            MessageBox.Show(se.Message);
+              
+    //            Thread.CurrentThread.Abort();
+    //        }
+    //        catch (IOException ex)
+    //        {
+    //            //읽을수 없을 때 처리
+    //            br.Close();
+    //            bw.Close();
+    //            ns.Close();
+    //            ns = null;
+    //            refClient.Close();
+                
+    //            Thread.CurrentThread.Abort();
+    //        }
+    //    }
+    //}
 }
