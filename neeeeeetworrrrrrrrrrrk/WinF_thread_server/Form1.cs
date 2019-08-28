@@ -12,6 +12,8 @@ namespace WinF_thread_server
         private TcpListener tcpListener = null;
         string clientIP;
         string str;
+        string time = null;
+        string msg = null;
         public Form1()
         {
             InitializeComponent();
@@ -76,10 +78,9 @@ namespace WinF_thread_server
         
         void Proc(TcpClient client)
         {
-            TcpClient refClient;
+            TcpClient refClient = client;
             BinaryReader br = null;
             BinaryWriter bw = null;
-            refClient = client;
             NetworkStream ns = refClient.GetStream();
             
             try
@@ -89,7 +90,10 @@ namespace WinF_thread_server
                 while (true)
                 {
                     str = br.ReadString();
-                    bw.Write(str);
+                    time = DateTime.Now.ToShortTimeString();
+                    str = str.TrimEnd();
+                    msg = "[" + time + "] : " + str + "\r\n";
+                    bw.Write(msg);
                 }
             }
             catch (SocketException se)
